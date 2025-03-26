@@ -1,0 +1,123 @@
+baseURL: https://example.org/
+languageCode: zn-ch
+title: Hotaru's Blog
+pagination:
+  pagerSize: 5
+theme: [PaperMod]
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Search
+      url: /search/
+      weight: 2
+    - name: Archive
+      url: /archives/
+      weight: 3
+    - name: Tags
+      url: /tags/
+      weight: 4
+
+params:
+  description: "Hotaru's Blog"
+  author: Hotaru
+  defaultTheme: auto
+  DateFormat: "2006-01-02"
+
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to Hotaru's Blog. 
+  
+  profileMode:
+    enabled: true
+    title: "Hi there \U0001F44B"
+    imageUrl: "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/svg/emoji_u1f9d1_1f3fb_200d_1f4bb.svg"
+    imageTitle: Niuma Internet Worker
+    # imageWidth: 120
+    # imageHeight: 120
+    subtitle: 🌟 Binary | 🌟 Vuln | 🌟 CTFer | 🌟 Pwn
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  socialIcons: # optional
+    - name: "wechat"
+      url: "<link1>"
+    - name: "QQ"
+      url: "<link2>"
+    - name: "Github"
+      url: "<link3>"
+
+  mainSections: # Posts from only one folder/section visible on home page
+  - ctfs
+  - daily
+
+  taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: false
+  ShowPageNums: true
+  ShowToc: true
+  TocOpen: true
+  UseHugoToc: false
+  comments: false
+
+  # for search page
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    codeFences: true
+    # guessSyntax: true
+    lineNos: true
+    style: monokai
+
+frontmatter:
+  date:
+  - date
+  - :fileModTime
+  - :default
+  
