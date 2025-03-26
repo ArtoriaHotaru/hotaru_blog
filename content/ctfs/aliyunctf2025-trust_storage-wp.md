@@ -37,13 +37,13 @@ ATF的功能有两个：
 1. boot
 2. runtime firmware（在EL3的异常层，通过smc指令实现）
 
-![ARM trusted firmware layer description and EL3 firmware extensions by Virtual Open Systems](https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/atf_layer_extensions.png)
+![ARM trusted firmware layer description and EL3 firmware extensions by Virtual Open Systems](img/trust_storage_wp/atf_layer_extensions.png)
 
 ### 源码结构
 
 ATF 是 ARM 的可信固件，官方提供了 [TF-A](https://github.com/ARM-software/arm-trusted-firmware.git) 固件源码，源码结构主要为以下几个部分：
 
-![image-20250304083444333](https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250304083444333.png)
+![image-20250304083444333](img/trust_storage_wp/image-20250304083444333.png)
 
 通过`blx/blx_main.c`中`blx_main`函数上方注释可以大概得知其功能：
 
@@ -55,7 +55,7 @@ ATF 是 ARM 的可信固件，官方提供了 [TF-A](https://github.com/ARM-soft
 
 整个启动流程调用关系和层级结构如下，主要关注 BL31 的部分：
 
-![img](https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/v2-9b2fdd80be0f044b482e590d7505dfb6_r.jpg)
+![img](img/trust_storage_wp/v2-9b2fdd80be0f044b482e590d7505dfb6_r.jpg)
 
 
 
@@ -235,7 +235,7 @@ static inline uint32_t get_unique_oen(uint32_t oen, uint32_t call_type)
 
 
 
-<img src="https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250228154946122.png" alt="image-20250228154946122" style="zoom:50%;" />
+<img src="img/trust_storage_wp/image-20250228154946122.png" alt="image-20250228154946122" style="zoom:50%;" />
 
 当使用 SMC64/HVC64 协议时，SMC 或 HVC 指令最多可以在寄存器中传递6个 64 位参数，并且可以在寄存器中返回最多4个 64 位值。（对于来自 EL2 的 SMC 调用，可以添加一个可选的第7个 32 位参数client ID在W07）。
 
@@ -266,7 +266,7 @@ static inline uint32_t get_unique_oen(uint32_t oen, uint32_t call_type)
 
 010editor中找到偏移位置：
 
-![image-20250303083753669](https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250303083753669.png)
+![image-20250303083753669](img/trust_storage_wp/image-20250303083753669.png)
 
 使用`dd`工具提取fip.bin：
 
@@ -592,7 +592,7 @@ call_handler:
 
 `sub_E0A2FF8`函数用于判断内存地址是否安全，通过`0xE0AD000`处的结构体进行判断，并有多处交叉引用：
 
-<img src="https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250311112608317.png" alt="image-20250311112608317" style="zoom: 67%;" />
+<img src="img/trust_storage_wp/image-20250311112608317.png" alt="image-20250311112608317" style="zoom: 67%;" />
 
 通过`0xE0A3234`处的引用，我们往里追溯可以找到字符串`mmap_add_region_check() failed. error %d`，在源码中搜索可以将`sub_E0A33E0`对应到`mmap_add_region_ctx`，从而判断出`0xE0AD000`处的结构体类型为`xlat_ctx_t`，并根据源码判断该结构体为全局变量`tf_xlat_ctx`。
 
@@ -1656,9 +1656,9 @@ aarch64-linux-gnu-gcc -o shellcode ./shellcode.c
 
 提取：
 
-<img src="https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250314163138195.png" alt="image-20250314163138195" style="zoom:50%;" />
+<img src="img/trust_storage_wp/image-20250314163138195.png" alt="image-20250314163138195" style="zoom:50%;" />
 
-![image-20250314162910063](https://artoriahotaru.github.io/hotaru_blog/img/trust_storage_wp/image-20250314162910063.png)
+![image-20250314162910063](img/trust_storage_wp/image-20250314162910063.png)
 
 ## Exploit
 
