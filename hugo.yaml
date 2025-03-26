@@ -28,9 +28,12 @@ menu:
     - name: Archive
       url: /archives/
       weight: 3
+    - name: Categories
+      url: /categories/
+      weight: 4
     - name: Tags
       url: /tags/
-      weight: 4
+      weight: 5
 
 params:
   description: "Hotaru's Blog"
@@ -53,6 +56,8 @@ params:
     buttons:
       - name: Archives
         url: archives
+      - name: Categories
+        url: categories
       - name: Tags
         url: tags
 
@@ -69,9 +74,13 @@ params:
   - daily
 
   taxonomies:
-    category: categories
+    category: categories # ctf, daily
+    type: type # pwn, reverse, realword, cve / cve, study, tips (for daily)
+    source: source # xxxctf2025, adword, buuctf, ...
+    arch: arch # os and arch
+    knowladge: knowladge # heap, stack, atf, ...
+    difficulty: difficulty # high, medium, easy
     tag: tags
-    series: series
 
   ShowReadingTime: true
   ShowWordCount: true
@@ -121,3 +130,6 @@ frontmatter:
   - :fileModTime
   - :default
   
+  caches:
+    images:
+      dir: :cacheDir/images
