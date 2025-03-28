@@ -26,14 +26,23 @@ menu:
       url: /search/
       weight: 2
     - name: Archive
-      url: /archives/
+      url: /archives/ # all contents sorted by time
       weight: 3
-    - name: Categories
-      url: /categories/
+    - name: CTFs
+      url: /ctfs/
       weight: 4
-    - name: Tags
-      url: /tags/
+    - name: Daily
+      url: /daily/
       weight: 5
+
+taxonomies:
+  series: series # pwn, reverse, realword, cve, os, arch (for ctf) / cve, study, tips (for daily)
+  category: categories # ctf, daily
+  tag: tags
+## Page params:
+  # source: source # xxxctf2025, adword, buuctf, ...  (for ctf)
+  # hilights: knowladge # heap, stack, atf, ...
+  # difficulty: difficulty # high, medium, easy
 
 params:
   description: "Hotaru's Blog"
@@ -56,10 +65,10 @@ params:
     buttons:
       - name: Archives
         url: archives
-      - name: Categories
-        url: categories
-      - name: Tags
-        url: tags
+      - name: CTFs
+        url: ctfs
+      - name: Daily
+        url: daily
 
   socialIcons: # optional
     - name: "wechat"
@@ -70,17 +79,8 @@ params:
       url: "<link3>"
 
   mainSections: # Posts from only one folder/section visible on home page
-  - ctfs
-  - daily
-
-  taxonomies:
-    category: categories # ctf, daily
-    type: type # pwn, reverse, realword, cve / cve, study, tips (for daily)
-    source: source # xxxctf2025, adword, buuctf, ...
-    arch: arch # os and arch
-    knowladge: knowladge # heap, stack, atf, ...
-    difficulty: difficulty # high, medium, easy
-    tag: tags
+    - ctfs
+    - daily
 
   ShowReadingTime: true
   ShowWordCount: true

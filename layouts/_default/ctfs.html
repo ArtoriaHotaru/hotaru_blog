@@ -1,0 +1,74 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title }}
+    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
+    {{- with .OutputFormats.Get "rss" }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+{{- end }}
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+<div class="ctf-table">
+  <table>
+    <thead>
+        <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Type</th>
+        <th scope="col">Highlights</th>
+        <th scope="col">Source</th>
+        <th scope="col">Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+      {{- $pages := union .RegularPages .Sections }}
+      {{- $paginator := .Paginate $pages }}
+      {{- $term := .Data.Term }}
+      {{- range $index, $page := $paginator.Pages }}
+      <tr>  
+        <td> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </td>
+        <td>
+          <ul class="small-tags">
+            {{- range $name := .Params.series }}
+            {{- with site.GetPage (printf "/series/%s" $name) }}
+            <li><a style="background: var(--{{ $name }});" href="{{ .Permalink }}">{{ $name }}</a></li>
+            {{- end }}
+            {{- end }}
+          </ul>
+        </td>
+        <td> {{ .Params.Highlights }} </td>
+        <td> {{ .Params.Source }} </td>
+        <td style="border-right: 0; text-align: center;"> {{ .Params.Difficulty }} </td>
+      </tr>
+      {{- end }}
+  </tbody>
+  </table>
+</div>
+
+{{- end }}{{- /* end main */ -}}
+

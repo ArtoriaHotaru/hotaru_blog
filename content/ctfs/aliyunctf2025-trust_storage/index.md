@@ -5,12 +5,11 @@ title: "AliyunCTF2025 - trust_storage writeup"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-type: ["pwn"] # pwn, reverse, realword, cve, ... / study, tips (for daily)
-arch: ["linux", "x86_64"] # os and arch
-knowladge: ["atf"] # heap, stack, atf, ...
-source: ["aliyunctf2025"] # xxxctf2025, adword, buuctf, ...
-difficulty: ["high"] # high, medium, easy
-tags: ["ctf", "pwn", "linux", "x86_64", "aliyunctf2025", "atf"]
+series: ["pwn", "aarch64"] # pwn, reverse, realword, cve, ... / study, tips (for daily)
+highlights: "ATF (Arm Trust Firmware), tee, smc"
+source: "AliyunCTF2025" # xxxctf2025, adword, buuctf, ...
+difficulty: "high" # high, medium, easy
+tags: ["ctf", "pwn", "atf", "tee", "smc", "aarch64"]
 draft: false
 hidemeta: false
 ShowCanonicalLink: false

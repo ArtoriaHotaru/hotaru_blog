@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Ctfs | Hotaru&#39;s Blog</title>
+<title>CTFs | Hotaru&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Ctfs - Hotaru&#39;s Blog">
+<meta name="description" content="ctfs home page">
 <meta name="author" content="Hotaru">
 <link rel="canonical" href="http://localhost:1313/ctfs/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.d3353e2b958b4af8cbe5c6e467d4153aee28c03236fc66b037d99694a7bceb5f.css" integrity="sha256-0zU&#43;K5WLSvjL5cbkZ9QVOu4owDI2/GawN9mWlKe8618=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.446a41216b58cf00714bcf422ddd76921ae4099312a0f8c85d9cd44002b85533.css" integrity="sha256-RGpBIWtYzwBxS89CLd12khrkCZMSoPjIXZzUQAK4VTM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -56,11 +56,12 @@
         }
 
     </style>
-</noscript>
+</noscript><link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/qxs/dist/quan/result.css' />
+<link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Medium/result.css' />
 </head>
 
-<body class="list" id="top"><script type="module" src="https://cdn.jsdmirror.com/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-<script nomodule src="https://cdn.jsdmirror.com/npm/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+<body class="list" id="top"><script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -116,17 +117,22 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="http://localhost:1313/ctfs/" title="CTFs">
+                    <span class="active">CTFs</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/daily/" title="Daily">
+                    <span>Daily</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<main class="main">
 <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
   <h1>
-    Ctfs
+    CTFs
     <a href="/ctfs/index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
@@ -138,24 +144,33 @@
   </h1>
 </header>
 
-<article class="post-entry"> 
-<figure class="entry-cover">
-            <img loading="lazy" src="http://localhost:1313/images/msg.png" alt="">
-</figure>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">AliyunCTF2025 - trust_storage writeup
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>题目分析 ATF基础知识 参考：
-https://github.com/ARM-software/arm-trusted-firmware.git https://www.virtualopensystems.com/en/services/arm-trusted-firmware-extended-services/ https://hackmd.io/@BooleanII/linux2024-ARM_Trusted_Firmware#ARM-trusted-firmware Trusted Firmware-A (TF-A) is a reference implementation of secure world software for Arm A-Profile architectures (Armv8-A and Armv7-A), including an Exception Level 3 (EL3) Secure Monitor. It provides a suitable starting point for productization of secure world boot and runtime firmware, in either the AArch32 or AArch64 execution states.
-ATF 是一个基于 ARMv8 的开源框架，用于使用 TrustZone，并分别在安全世界和普通世界中启动安全负载和非受信任的固件（例如 U-Boot 等）。安全世界和普通世界之间的上下文切换仅能在名为 Secure Monitor 或 EL3 的异常层中实现。
-ATF的功能有两个：
-boot runtime firmware（在EL3的异常层，通过smc指令实现） ...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-25 14:55:47.6070799 +0800 CST'>2025-03-25</span>&nbsp;·&nbsp;32 min&nbsp;·&nbsp;6652 words&nbsp;·&nbsp;Hotaru</footer>
-  <a class="entry-link" aria-label="post link to AliyunCTF2025 - trust_storage writeup" href="http://localhost:1313/ctfs/aliyunctf2025-trust_storage-wp/"></a>
-</article>
+<div class="ctf-table">
+  <table>
+    <thead>
+        <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Type</th>
+        <th scope="col">Highlights</th>
+        <th scope="col">Source</th>
+        <th scope="col">Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>  
+        <td> <a href="/ctfs/aliyunctf2025-trust_storage/">AliyunCTF2025 - trust_storage writeup</a> </td>
+        <td>
+          <ul class="small-tags">
+            <li><a style="background: var(--pwn);" href="http://localhost:1313/series/pwn/">pwn</a></li>
+            <li><a style="background: var(--aarch64);" href="http://localhost:1313/series/aarch64/">aarch64</a></li>
+          </ul>
+        </td>
+        <td> ATF (Arm Trust Firmware), tee, smc </td>
+        <td> AliyunCTF2025 </td>
+        <td style="border-right: 0; text-align: center;"> high </td>
+      </tr>
+  </tbody>
+  </table>
+</div>
     </main>
     
 <footer class="footer">

@@ -1,0 +1,88 @@
+.ctf-table {
+    position: absolute;
+    left: -48px;
+    margin: auto;
+    padding: var(--gap);
+}
+
+.ctf-table table {
+    font-family:  "Maple Mono CN Medium";
+    font-size: 14px;
+    /* font-weight: 400; */
+    position: relative;
+    border: 0px;
+    margin: 0px;
+    min-width: calc(var(--main-width) + var(--gap) * 2 + 200px);
+    border-collapse: collapse;
+    border: none;
+}
+
+.ctf-table th {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(55, 53, 47, 0.65);
+    padding: 10px 8px;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+.ctf-table td {
+    /* color: #669; */
+    padding: 8px 8px 8px 8px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+}
+.ctf-table tbody tr:hover td {
+    font-weight: bold;
+    color: rgba(55, 53, 47, 0.65);;
+}
+
+/* .ctf-table a {
+    color: #669;
+} */
+
+.small-tags {
+    --pwn: rgb(167, 195, 200);
+    --stack: rgb(183, 220, 212);
+    --heap: rgb(223, 241, 241);
+    --shellcode: rgb(248, 228, 211);
+    --cpp: rgb(210, 219, 229);
+    --go: rgb(248, 229, 226);
+    --sandbox: rgb(204, 235, 214);
+    --qemu: rgb(246, 235, 188);
+    --kernel: rgb(189, 213, 214);
+    --windows: rgb(250, 219, 223);
+    --aarch64: rgb(233, 247, 182);
+    --arm: rgb(233, 247, 182);
+    --mips: rgb(195, 224, 163);
+    --ppc: rgb(142, 191, 90);
+    --reverse: rgb(187, 214, 221);
+    --realword: rgb(245, 190, 168);
+    /* more... */
+    --active: rgb(167, 195, 200);
+}
+
+.small-tags {
+    padding: 2px 4px;
+}
+
+.small-tags li {
+    display: inline-block;
+    margin: 1px;
+    font-weight: 50;
+}
+
+.small-tags a {
+    display: block;
+    padding: 2px 6px;
+    /* background: var(--tertiary); */
+    border-radius: 6px;
+    transition: transform 0.1s;
+}
+
+.small-tags a:active {
+    background: var(--active);
+    transform: scale(0.96);
+}
+

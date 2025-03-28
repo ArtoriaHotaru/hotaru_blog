@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Hotaru&#39;s Blog</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Hotaru&#39;s Blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zn-ch</language>
+    <lastBuildDate>Fri, 28 Mar 2025 10:24:54 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My 2nd post</title>
+      <link>http://localhost:1313/ctfs/test/test/</link>
+      <pubDate>Fri, 28 Mar 2025 10:24:54 +0800</pubDate>
+      <guid>http://localhost:1313/ctfs/test/test/</guid>
+      <description>&lt;h1 id=&#34;test-file&#34;&gt;test file&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>My 1st post</title>
+      <link>http://localhost:1313/daily/test/</link>
+      <pubDate>Thu, 27 Mar 2025 16:03:58 +0800</pubDate>
+      <guid>http://localhost:1313/daily/test/</guid>
+      <description>&lt;h1 id=&#34;test-file&#34;&gt;test file&lt;/h1&gt;</description>
+    </item>
+  </channel>
+</rss>

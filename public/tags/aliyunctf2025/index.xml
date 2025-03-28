@@ -6,14 +6,29 @@
     <description>Recent content in Aliyunctf2025 on Hotaru&#39;s Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zn-ch</language>
-    <lastBuildDate>Tue, 25 Mar 2025 14:55:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Mar 2025 16:38:37 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/aliyunctf2025/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AliyunCTF2025 - trust_storage writeup</title>
-      <link>http://localhost:1313/ctfs/aliyunctf2025-trust_storage-wp/</link>
-      <pubDate>Tue, 25 Mar 2025 14:55:47 +0800</pubDate>
-      <guid>http://localhost:1313/ctfs/aliyunctf2025-trust_storage-wp/</guid>
-      <description>Desc Text.</description>
+      <link>http://localhost:1313/ctfs/aliyunctf2025-trust_storage/</link>
+      <pubDate>Thu, 27 Mar 2025 16:38:37 +0800</pubDate>
+      <guid>http://localhost:1313/ctfs/aliyunctf2025-trust_storage/</guid>
+      <description>&lt;h1 id=&#34;题目分析&#34;&gt;题目分析&lt;/h1&gt;
+&lt;h2 id=&#34;atf基础知识&#34;&gt;ATF基础知识&lt;/h2&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ARM-software/arm-trusted-firmware.git&#34;&gt;https://github.com/ARM-software/arm-trusted-firmware.git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.virtualopensystems.com/en/services/arm-trusted-firmware-extended-services/&#34;&gt;https://www.virtualopensystems.com/en/services/arm-trusted-firmware-extended-services/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hackmd.io/@BooleanII/linux2024-ARM_Trusted_Firmware#ARM-trusted-firmware&#34;&gt;https://hackmd.io/@BooleanII/linux2024-ARM_Trusted_Firmware#ARM-trusted-firmware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Trusted Firmware-A (TF-A) is a reference implementation of secure world software for &lt;a href=&#34;https://developer.arm.com/architectures/cpu-architecture/a-profile&#34;&gt;Arm A-Profile architectures&lt;/a&gt; (Armv8-A and Armv7-A), including an Exception Level 3 (EL3) &lt;a href=&#34;http://www.arm.com/products/processors/technologies/trustzone/tee-smc.php&#34;&gt;Secure Monitor&lt;/a&gt;. It provides a suitable starting point for productization of secure world boot and runtime firmware, in either the AArch32 or AArch64 execution states.&lt;/p&gt;
+&lt;p&gt;ATF 是一个基于 ARMv8 的开源框架，用于使用 TrustZone，并分别在安全世界和普通世界中启动安全负载和非受信任的固件（例如 U-Boot 等）。&lt;strong&gt;安全世界和普通世界之间的上下文切换仅能在名为 Secure Monitor 或 EL3 的异常层中实现&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;ATF的功能有两个：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;boot&lt;/li&gt;
+&lt;li&gt;runtime firmware（在EL3的异常层，通过smc指令实现）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;ARM trusted firmware layer description and EL3 firmware extensions by Virtual Open Systems&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ctfs/aliyunctf2025-trust_storage/images/atf_layer_extensions.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

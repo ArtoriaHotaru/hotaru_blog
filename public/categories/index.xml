@@ -6,6 +6,14 @@
     <description>Recent content in Categories on Hotaru&#39;s Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>zn-ch</language>
+    <lastBuildDate>Fri, 28 Mar 2025 09:04:29 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ctf</title>
+      <link>http://localhost:1313/categories/ctf/</link>
+      <pubDate>Fri, 28 Mar 2025 09:04:29 +0800</pubDate>
+      <guid>http://localhost:1313/categories/ctf/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

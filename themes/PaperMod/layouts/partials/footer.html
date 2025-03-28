@@ -97,7 +97,7 @@
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;
-        console.log(container);
+        // console.log(container);
 
         const copybutton = document.createElement('button');
         copybutton.classList.add('copy-code');
@@ -131,7 +131,7 @@
 
         // if (container.classList.contains("highlight")) {
         if (container.parentNode.parentNode.classList.contains("code-block")) {
-            console.log("active");
+            // console.log("active");
             container.appendChild(copybutton);
         } else if (container.parentNode.firstChild == container) {
             // td containing LineNos
