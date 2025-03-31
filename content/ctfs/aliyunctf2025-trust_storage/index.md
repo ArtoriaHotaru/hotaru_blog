@@ -1,6 +1,6 @@
 ---
-title: "AliyunCTF2025 - trust_storage writeup"
-# description: "Desc Text."
+title: "trust_storage"
+description: "AliyunCTF2025"
 # date: "2000-00-00"
 # weight: 1
 # aliases: ["/first"]
