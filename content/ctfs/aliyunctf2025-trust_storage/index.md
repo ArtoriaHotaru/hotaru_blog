@@ -23,6 +23,10 @@ cover:
     # caption: "some text..." # display caption under cover
 ---
 
+> [!attachment]
+>
+> [attachment](./attachment.zip)
+
 # 题目分析
 
 ## ATF基础知识
