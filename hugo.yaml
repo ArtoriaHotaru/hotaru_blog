@@ -3,7 +3,7 @@ languageCode: zn-ch
 title: Hotaru's Blog
 pagination:
   pagerSize: 5
-theme: [PaperMod]
+theme: ["hugo-notice", "PaperMod"]
 
 enableInlineShortcodes: true
 enableRobotsTXT: true

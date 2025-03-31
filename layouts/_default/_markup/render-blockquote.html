@@ -1,0 +1,221 @@
+<style type="text/css">
+  .alert-blockquote {
+    --title-color: #fff;
+    --content-color: inherit;
+    padding: 18px 18px 10px 18px !important;
+    line-height: 24px;
+    margin: 1rem 0;
+    border-radius: 4px;
+    color: var(--content-color);
+    /* border-left: none !important; */
+    /* border: 1px solid black; */
+  }
+  
+  .dark .alert-blockquote *,
+  .alert-blockquote * {
+    color: var(--content-color) !important;
+  }
+  
+  .post-content blockquote {
+      margin: 10px 0;
+      padding: unset;
+  }
+  
+  .alert-blockquote .alert-heading {
+    margin: -18px -18px 12px;
+    padding: 10px 18px;
+    border-radius: 4px 4px 0 0;
+    font-weight: 600;
+    color: var(--title-color) !important;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert-blockquote .alert-heading svg {
+    width: 1em !important;
+    height: 1em !important;
+    margin-right: 0.5rem !important;
+    fill: currentColor !important;
+  }
+  
+  .alert-blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Light theme */
+  /* default */
+  .alert-blockquote {
+    border-top:unset;
+    /* border: 1px solid #166dd0; */
+    /* --title-background-color: rgba(221, 233, 244, 0.631); */
+    --content-background-color: rgba(221, 233, 244, 0.602);
+  }
+  .alert-blockquote .alert-heading {
+    /* border-bottom: 1px dashed #166dd07c; */
+    color: #0969da !important;
+  }
+  
+  /* note */
+  .alert-blockquote.alert-note {
+    /* border: 1px solid #166dd0; */
+    /* border-left-color: #0969da !important; */
+    /* --title-background-color: rgba(221, 233, 244, 0.631); */
+    --content-background-color: rgba(221, 233, 244, 0.602);
+  }
+  .alert-blockquote.alert-note .alert-heading {
+    color: #0969da !important;
+  }
+  
+  /* tip */
+  .alert-blockquote.alert-tip {
+    /* border: 1px solid #1a7f37; */
+    /* --title-background-color: rgb(173,193,182); */
+    --content-background-color: rgba(222, 240, 223, 0.7);
+  }
+  .alert-blockquote.alert-tip .alert-heading {
+    color: #1a7f37 !important;
+    /* border-bottom: 1px dashed #1a7f37; */
+  }
+  
+  /* important */
+  .alert-blockquote.alert-important {
+    /* border: 1px solid #8250df; */
+    /* border-left-color: #8250df !important; */
+    /* --title-background-color: #6843ae7c; */
+    --content-background-color: rgba(235, 227, 245, 0.9);
+  }
+  
+  .alert-blockquote.alert-important .alert-heading {
+    color: #8250df !important;
+    /* border-bottom: 1px dashed #8250df; */
+  }
+  
+  /* warning */
+  .alert-blockquote.alert-warning {
+    /* border: 1px solid #9a6700; */
+    /* border-left-color: #9a6700 !important; */
+    /* --title-background-color: rgb(232, 198, 140); */
+    --content-background-color: rgba(243, 232, 222);
+  }
+  .alert-blockquote.alert-warning .alert-heading {
+    color: #9a6700 !important;
+    /* border-bottom: 1px dashed #9a6700; */
+  }
+  
+  /* caution */
+  .alert-blockquote.alert-error,
+  .alert-blockquote.alert-caution {
+    /* border: 1px solid #cf222e; */
+    /* border-left-color: #cf222e !important; */
+    /* --title-background-color: rgb(244, 224, 223,0.5); */
+    --content-background-color: rgba(243, 207, 205, 0.9);
+  }
+  .alert-blockquote.alert-error .alert-heading,
+  .alert-blockquote.alert-caution .alert-heading {
+    color: #cf222e !important;
+    /* border-bottom: 1px dashed #cf222e; */
+  }
+  
+  /* Dark theme */
+  .dark .alert-blockquote {
+    border-top:unset;
+    /* --content-color: #d0d7dd; */
+    /* --title-background-color: #5151527c; */
+    --content-background-color: rgba(22, 37, 50, 0.8);
+  }
+  
+  .dark .alert-blockquote .alert-heading {
+    color: #58a6ff !important;
+  }
+  
+  .dark .alert-blockquote.alert-note {
+    /* --title-background-color: #58a6ff7c; */
+    --content-background-color: rgba(22, 37, 50, 0.8);
+  }
+  .dark .alert-blockquote.alert-note .alert-heading {
+    color: #58a6ff !important;
+  }
+  
+  .dark .alert-blockquote.alert-tip {
+    /* --title-background-color: #82bd8a7c; */
+    --content-background-color: rgba(55, 84, 56, 0.7);
+  }
+  .dark .alert-blockquote.alert-tip .alert-heading {
+    color: #3fb950 !important;
+  }
+  
+  .dark .alert-blockquote.alert-important {
+    /* --title-background-color: #9173c57c; */
+    --content-background-color: rgba(46, 32, 62, 0.9);
+  }
+  .dark .alert-blockquote.alert-important .alert-heading {
+    color: #8d62d8 !important;
+  }
+  
+  .dark .alert-blockquote.alert-warning {
+    /* --title-background-color: #d1b068a0; */
+    --content-background-color: rgb(84, 68, 55);
+  }
+  .dark .alert-blockquote.alert-warning .alert-heading {
+    color: #d1b271 !important;
+  }
+  
+  .dark .alert-blockquote.alert-error,
+  .dark .alert-blockquote.alert-caution {
+    /* --title-background-color: #c94a43; */
+    --content-background-color: rgba(108, 57, 54, 0.9);
+  }
+  .dark .alert-blockquote.alert-error .alert-heading,
+  .dark .alert-blockquote.alert-caution .alert-heading {
+    color: #ff9791 !important;
+  }
+  
+  .alert-blockquote .alert-heading {
+    background: var(--title-background-color);
+  }
+  
+  .alert-blockquote {
+    background: var(--content-background-color);
+  }
+  
+  blockquote:not(.alert-blockquote){
+    font-size: 0.9rem;
+    border-inline-start: 4px solid rgb(0, 132, 255);
+    background: rgba(221, 233, 244, 0.602);
+    padding: 10px 10px 2px 18px !important;
+    margin: 1rem 0;
+  }
+</style>
+
+
+{{ $alertTypes := dict
+    "note" "<path d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\"></path>"
+    "tip" "<path d=\"M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z\"></path>"
+    "important" "<path d=\"M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z\"></path>"
+    "warning" "<path d=\"M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z\"></path>"
+    "caution" "<path d=\"M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\"></path>"
+    "error" "<path d=\"M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\"></path>"
+  }}
+  
+  {{
+    $default := "<path d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\"></path>"
+  }}
+    
+    
+  {{ if eq .Type "alert" }}
+  <blockquote class="alert-blockquote alert-{{ .AlertType }}">
+    <p class="alert-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        {{- $alertType := index $alertTypes .AlertType | default $default }}
+        {{ $alertType | safeHTML }}
+      </svg>
+      <span>{{ or (i18n .AlertType) (title .AlertType) }}</span>
+    </p>
+    {{ .Text | safeHTML }}
+  </blockquote>
+  {{ else }}
+  <blockquote>
+    {{ .Text | safeHTML }}
+  </blockquote>
+  {{ end }}
+
