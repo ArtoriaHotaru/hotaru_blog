@@ -133,3 +133,5 @@ frontmatter:
   caches:
     images:
       dir: :cacheDir/images
+
+contentDir: "content"
