@@ -1,0 +1,32 @@
+{{ if .Params.attachmentURL }}
+{{ $url := urls.Parse .Params.attachmentURL }}
+
+{{- if or .Params.author site.Params.author (.Param "ShowReadingTime") (not .Date.IsZero) .IsTranslated (or .Params.editPost.URL site.Params.editPost.URL) }}&nbsp;|&nbsp;{{- end -}}
+<span class="post-attach">
+    <a href="{{ $url }}" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path d="M 19.007812 13.101562 C 21.662109 10.558594 21.662109 6.445312 19.007812 3.902344 C 16.359375 1.365234 12.058594 1.365234 9.404297 3.902344 M 7.916016 17.806641 L 15.808594 10.253906 C 16.757812 9.345703 16.757812 7.875 15.808594 6.966797 C 14.859375 6.064453 13.324219 6.064453 12.375 6.966797 L 4.541016 14.466797 C 2.742187 16.189453 2.742187 18.984375 4.541016 20.707031 C 6.345703 22.429687 9.263672 22.429687 11.0625 20.707031 L 15.035156 16.904297 M 3 10.037109 L 6.199219 6.966797" transform="matrix(0.666667,0,0,0.666667,0,0)"/>
+        </svg>
+        {{- (site.Params.CanonicalLinkText | default .Params.CanonicalLinkText) | default "Attachment" -}}
+    </a>
+</span>
+{{- end }}
+
+<style>
+    .post-attach a {
+        color: #0969da;
+    }
+    .post-attach a:hover {
+        font-weight: bold;
+        color: rgb(0, 57, 109);
+    }
+    .post-attach svg path {
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: miter;
+        stroke:#0969da;
+        stroke-opacity: 1;
+        stroke-miterlimit: 4;
+    }
+</style>

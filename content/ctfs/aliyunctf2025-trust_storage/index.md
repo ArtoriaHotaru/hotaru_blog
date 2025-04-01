@@ -10,10 +10,10 @@ highlights: "ATF (Arm Trust Firmware), tee, smc"
 source: "AliyunCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "atf", "tee", "smc", "aarch64"]
+attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
 ShowCanonicalLink: false
-#canonicalURL: "https://canonical.url/to/page"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 hideSummary: false
@@ -22,10 +22,6 @@ cover:
     image: "images/cover.png" # image path/url
     # caption: "some text..." # display caption under cover
 ---
-
-> [!attachment]
->
-> [attachment](./attachment.zip)
 
 # 题目分析
 

@@ -10,6 +10,7 @@ highlights: "ATF (Arm Trust Firmware), tee, smc"
 source: "xxxCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "atf", "tee", "smc", "aarch64"]
+attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
 ShowCanonicalLink: false
