@@ -153,13 +153,6 @@
     border-radius: var(--radius);
 }
 
-/* .post-content .highlight:not(table) {
-    margin: 10px auto;
-    background: var(--code-block-bg) !important;
-    border-radius: var(--radius);
-    direction: ltr;
-} */
-
 .post-content .highlight:not(table) {
     margin: 0px auto 10px auto;
     background: var(--code-block-bg) !important;
@@ -445,9 +438,9 @@ img.in-text {
     text-transform: capitalize;
 }
 
-.code-has-hidden-child {
+/* .code-has-hidden-child {
     border: 4px solid rgb(195, 224, 163);
-}
+} */
 
 .code-block-open,
 .code-block-close{
