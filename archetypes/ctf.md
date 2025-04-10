@@ -1,7 +1,7 @@
 ---
 title: "xxx"
 description: "xxxCTF2025"
-# date: "2000-00-00"
+date: "2025-00-00"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
