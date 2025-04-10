@@ -36,37 +36,38 @@
     color: var(--content);
 }
 
+.post-header h1,
+.post-description,
+.post-content h1,
+.post-content h2,
 .post-content h3,
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 24px 0 16px;
+    font-family:'Xiaolai SC';
 }
 
 .post-content h1 {
-    margin: 40px auto 32px;
+    margin: 6rem auto 2rem;
     font-size: 40px;
+
 }
 
 .post-content h2 {
-    margin: 32px auto 24px;
+    margin: 5rem auto 1rem;
     font-size: 32px;
 }
 
 .post-content h3 {
+    margin: 4rem auto 1rem;
     font-size: 24px;
 }
 
-.post-content h4 {
-    font-size: 16px;
-}
-
-.post-content h5 {
-    font-size: 14px;
-}
-
+.post-content h4,
+.post-content h5,
 .post-content h6 {
-    font-size: 12px;
+    margin: 3rem auto 1rem;
+    font-size: 18px;
 }
 
 .post-content a,
@@ -191,6 +192,7 @@
 }
 
 .post-content code {
+    font-family: Courier, monospace;
     margin: auto 4px;
     padding: 4px 6px;
     font-size: 0.78em;
@@ -443,14 +445,20 @@ img.in-text {
 } */
 
 .code-block-open,
-.code-block-close{
+.code-block-close {
     margin-top: 5px;
 }
 .code-has-hidden-child .code-block-open,
-.code-block-close{
+.code-block-close {
     display: none;
 }
 .code-has-hidden-child .code-block-close,
-.code-block-open{
-    display: inline;
+.code-block-open {
+    display: block;
+}
+.code-has-hidden-child .code-content {
+    display: none;
+}
+.code-content {
+    display: block;
 }

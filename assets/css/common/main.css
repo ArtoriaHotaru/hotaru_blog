@@ -1,5 +1,5 @@
 .main {
-    font-family: "Maple Mono CN Medium";
+    font-family:'LXGW WenKai';
     position: relative;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     max-width: calc(var(--main-width) + var(--gap) * 2);

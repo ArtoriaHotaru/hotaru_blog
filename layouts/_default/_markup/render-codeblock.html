@@ -1,24 +1,27 @@
 <div class="code-block">
+    {{- if eq .Attributes.hide true }}
+    <div class="code-has-hidden-child">
+    {{- end }}
     <div class="code-title" onclick="toggleCode(this)">
         <span class="code-block-open"><ion-icon name="chevron-down-outline"></ion-icon></span>
         <span class="code-block-close"><ion-icon name="chevron-forward-outline"></ion-icon></ion-icon></span>
         <span>{{.Type}}</span>
     </div>
-    <div class="code-content" style="display: none;">
+    <div class="code-content">
         {{ $result := transform.HighlightCodeBlock . }}
         {{ $result.Wrapped }}
     </div>
+    {{- if eq .Attributes.hide true }}
+    </div>
+    {{- end }}
 </div>
 
 <script>
 function toggleCode(element) {
     const codeContent = element.nextElementSibling;
-    // console.log(codeContent)
-    if (codeContent.style.display === "none") {
-        codeContent.style.display = "block"; // Show the code block
+    if (codeContent.parentNode.classList.contains("code-has-hidden-child")) {
         codeContent.parentNode.classList.remove("code-has-hidden-child");
     } else {
-        codeContent.style.display = "none"; // Hide the code block
         codeContent.parentNode.classList.add("code-has-hidden-child");
     }
 }
