@@ -1,7 +1,7 @@
 ---
 title: "Install & Customlize Hugo PaperMod"
 description: "本文介绍了如何安装Hugo及PaperMod主题，以及在此基础上的配置和个性化修改方案。"
-# date: "2000-00-00"
+date: "2025-04-01"
 # weight: 1
 # aliases: ["/first"]
 categories: ["daily"]

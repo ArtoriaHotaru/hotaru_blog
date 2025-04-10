@@ -1,7 +1,7 @@
 ---
 title: "trust_storage"
 description: "AliyunCTF2025"
-# date: "2000-00-00"
+date: "2025-04-01"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily

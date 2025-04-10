@@ -5,7 +5,7 @@ date: "2025-04-10"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-series: ["pwn"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+series: ["pwn", "zig"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
 highlights: "Zig language FixedBufferAllocator, c_allocator, smp_allocator, page_allocator, and corresponding memory management"
 source: "PlaidCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "easy" # high, medium, easy
