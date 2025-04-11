@@ -81,7 +81,7 @@ hugo new daily/yyy/index.md --kind daily
 > 创建文件：
 >
 > ```bash
-> hugo new daily/xxx/index.md --kind daily
+> hugo new daily\xxx\index.md --kind daily
 > ```
 >
 > 
@@ -127,7 +127,7 @@ theme: ["PaperMod"]
 >
 > 没有特别说明的情况下，所作修改均为将`blog_root/themes/PaperMod`路径下的配置复制一份到`blog_root`下，即覆盖原有配置，避免更新主题时所作修改失效。
 
-### 代码块折叠
+### 代码块相关
 
 参考 [[Feat\] update default code style · AikenH ](https://github.com/AikenH/papermod-sidebar/commit/2305a1c5a7098edaee8c850bae4efa2e22bb700d)（和示例代码有一些不同）。
 
@@ -311,7 +311,7 @@ footer.html
             .appendChild(copybutton);
         } else {
             // code blocks not having highlight as parent class
-            codeblock.parentNode.appendChild(copybutton);
+            codeblock.parentNode.parentNode.parentNode.appendChild(copybutton);
         }
     });
 </script>
@@ -603,7 +603,7 @@ render-blockquote.html:
 > [!tip]
 > This is a tip.
 
-### CTFs Section list navigate page
+### Section page
 
 参考：
 
@@ -1172,7 +1172,6 @@ extend_head.html 添加:
 
 ```html
 <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/qxs/dist/quan/result.css' />
-<link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Medium/result.css' />
 ```
 
 header.css:
