@@ -107,11 +107,11 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 
   assets:
-    favicon: /img/favicon/favicon.ico
-    favicon16x16: /img/favicon/favicon-16x16.png
-    favicon32x32: /img/favicon/favicon-32x32.png
-    apple_touch_icon: /img/favicon/apple-touch-icon.png
-    safari_pinned_tab: /img/favicon/favicon.ico
+    favicon: /hotaru_blog/favicon.ico
+    favicon16x16: /hotaru_blog/favicon-16x16.png
+    favicon32x32: /hotaru_blog/favicon-32x32.png
+    apple_touch_icon: /hotaru_blog/apple-touch-icon.png
+    safari_pinned_tab: /hotaru_blog/favicon.ico
 
 outputs:
   home:
