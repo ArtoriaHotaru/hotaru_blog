@@ -1223,6 +1223,39 @@ extend_footer.html添加：
 </script>
 ```
 
+### favicon
+
+添加网页在浏览器标签页上显示的缩略图标。
+
+首先使用[Favicon Generator for perfect icons on all browsers](https://realfavicongenerator.net/)生成faicon包，保存到`static/img/favicon`路径下。
+
+修改/新增的文件：
+
+* layouts/partials/extend_header.html
+* hugo.yaml
+
+修改`hugo.yaml`：
+
+```yaml
+params:
+  assets:
+    favicon: /img/favicon/favicon.ico
+    favicon16x16: /img/favicon/favicon-16x16.png
+    favicon32x32: /img/favicon/favicon-32x32.png
+    apple_touch_icon: /img/favicon/apple-touch-icon.png
+    safari_pinned_tab: /img/favicon/favicon.ico
+```
+
+在extend_header.html添加：
+
+```html
+<link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+```
+
 
 
 # 部署到Github Pages
