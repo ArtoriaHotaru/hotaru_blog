@@ -206,21 +206,23 @@ post-single. css
     text-transform: capitalize;
 }
 
-.code-has-hidden-child {
-    border: 4px solid rgb(195, 224, 163);
-}
-
 .code-block-open,
-.code-block-close{
+.code-block-close {
     margin-top: 5px;
 }
 .code-has-hidden-child .code-block-open,
-.code-block-close{
+.code-block-close {
     display: none;
 }
 .code-has-hidden-child .code-block-close,
-.code-block-open{
-    display: inline;
+.code-block-open {
+    display: block;
+}
+.code-has-hidden-child .code-content {
+    display: none;
+}
+.code-content {
+    display: block;
 }
 ```
 
@@ -228,6 +230,9 @@ render-codeblock.html
 
 ```html
 <div class="code-block">
+    {{- if eq .Attributes.hide true }}
+    <div class="code-has-hidden-child">
+    {{- end }}
     <div class="code-title" onclick="toggleCode(this)">
         <span class="code-block-open"><ion-icon name="chevron-down-outline"></ion-icon></span>
         <span class="code-block-close"><ion-icon name="chevron-forward-outline"></ion-icon></ion-icon></span>
@@ -237,16 +242,17 @@ render-codeblock.html
         {{ $result := transform.HighlightCodeBlock . }}
         {{ $result.Wrapped }}
     </div>
+    {{- if eq .Attributes.hide true }}
+    </div>
+    {{- end }}
 </div>
 
 <script>
 function toggleCode(element) {
     const codeContent = element.nextElementSibling;
-    if (codeContent.style.display === "none" || codeContent.style.display === "") {
-        codeContent.style.display = "block"; // Show the code block
+    if (codeContent.parentNode.classList.contains("code-has-hidden-child")) {
         codeContent.parentNode.classList.remove("code-has-hidden-child");
     } else {
-        codeContent.style.display = "none"; // Hide the code block
         codeContent.parentNode.classList.add("code-has-hidden-child");
     }
 }
@@ -258,8 +264,6 @@ footer.html
 > [!note]
 >
 > 这里和原作者的实现不太一样，照搬原作者代码失败，对比网页源码发现好像是因为作者改过chroma所以标签的层级关系和主题源代码不同，所以自己根据实际情况魔改了一下。
-
-
 
 ```html
 {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
@@ -300,7 +304,6 @@ footer.html
 
         // if (container.classList.contains("highlight")) {
         if (container.parentNode.parentNode.classList.contains("code-block")) {
-            console.log("active");
             container.appendChild(copybutton);
         } else if (container.parentNode.firstChild == container) {
             // td containing LineNos
@@ -1261,6 +1264,26 @@ params:
 > 一开始本地可以正常显示图标，但远程不行，调试的时候发现加载icon资源时返回了404，url错误解析为`<user_name>.github.io/favicon.icon`。
 >
 > 由于部署到git pages域名为`<user_name>.github.io/<repo_name>`，本地直接使用`/`是可以正常访问到`static/`路径下的内容的，但远程需要再多加一级`/<repo_name>`才能正常访问到`static/`下的资源。
+
+
+
+# Tips
+
+## collapse shortcode
+
+```markdown
+{{< collapse summary="xxx" >}}
+...
+{{< /collapse >}}
+```
+
+## 默认收起代码块
+
+配合上一节`PaperMod Customize - 代码块相关`的魔改使用：
+
+```markdown
+```c {hide=true}
+```
 
 
 
