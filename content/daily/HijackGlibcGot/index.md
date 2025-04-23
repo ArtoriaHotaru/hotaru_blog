@@ -20,7 +20,7 @@ cover:
 
 # 利用方法
 
-首先，动态调试跟进libc代码，找call到libc plt表（`.plt.sec`段）中的函数，或者IDA找`j_`开头的函数调用，劫持这些函数的got表。
+首先，动态调试跟进libc代码，找call到libc plt表（`.plt.sec`段）中的函数，或者IDA找`j_`开头的函数调用， 这些调用通过`.plt.sec`段跳转调用`.got.plt`段中存储的指针。
 
 **如果只有一次写入机会**：将got表覆盖为one_gadget一次执行，不满足条件也没有办法。
 
@@ -59,7 +59,7 @@ got：
 
 
 
-# 常见函数调用
+## 常见函数调用
 
 > 用glibc2.38看的，其他版本仅作参考。
 >
@@ -69,21 +69,20 @@ got：
 printf -> __vfprintf_internal -> __printf_buffer -> j_strchrnul
                                                  -> __printf_buffer_write -> j_memcpy_0
 
-scanf -> j_strlen, j_free, ...(分支太多了看不过来，动调吧)
+scanf -> j_strlen, ...(分支太多了看不过来，动调吧)
 
-gets -> __uflow -> j_free
-     -> _IO_getline -> _IO_getline_info -> __uflow -> j_free
-                                        -> j_memchr, j_memcpy_0
+gets -> _IO_getline -> _IO_getline_info -> j_memchr, j_memcpy_0
 
 puts -> j_strlen
-
-exit -> __call_tls_dtors -> j_free
-     -> j_free
 
 __stack_chk_fail -> __fortify_fail -> j_strchrnul, j_strlen, j_mempcpy
 ```
 
-
+> [!critical]
+>
+> glibc2.38的`j_free`是通过`.plt.got`调用的，指针存在`.got`段，该段不可写，故`j_free`无法利用。
+>
+> 不知道是不是在所有libc版本里都是这个情况，具体情况具体分析。
 
 # 执行binsh
 
