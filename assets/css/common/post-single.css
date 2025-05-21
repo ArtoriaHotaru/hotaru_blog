@@ -48,25 +48,25 @@
 }
 
 .post-content h1 {
-    margin: 6rem auto 2rem;
+    margin: 4rem auto 2rem;
     font-size: 40px;
 
 }
 
 .post-content h2 {
-    margin: 5rem auto 1rem;
+    margin: 3rem auto 1rem;
     font-size: 32px;
 }
 
 .post-content h3 {
-    margin: 4rem auto 1rem;
+    margin: 2rem auto 1rem;
     font-size: 24px;
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 3rem auto 1rem;
+    margin: 1rem auto 1rem;
     font-size: 18px;
 }
 

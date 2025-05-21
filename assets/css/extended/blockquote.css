@@ -16,7 +16,7 @@ color: var(--content-color) !important;
 } */
 
 .post-content blockquote {
-margin: 10px 0;
+margin: 20px 0;
 padding: unset;
 }
 
