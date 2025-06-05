@@ -10,7 +10,7 @@ highlights: "ATF (Arm Trust Firmware), OP-TEE, TA (Trusted Applications)"
 source: "SASCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "atf", "tee", "arm"]
-attachmentURL: "attachment.tar.gz"
+attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
 ShowCanonicalLink: false
