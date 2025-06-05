@@ -1,5 +1,5 @@
 .ctf-table {
-    position: absolute;
+    position: relative;
     left: -48px;
     margin: auto;
     padding: var(--gap);
@@ -45,7 +45,6 @@
 
 .small-tags {
     --pwn: rgba(167, 195, 200, 0.6);
-    --stack: rgb(183, 220, 212);
     --heap: rgb(223, 241, 241);
     --shellcode: rgb(248, 228, 211);
     --syscall: rgba(18, 140, 126, 0.5);
@@ -62,7 +61,7 @@
     --ppc: rgba(142, 191, 90, 0.6);
     --reverse: rgb(187, 214, 221);
     --realword: rgb(245, 190, 168);
-    --cve: rgb(167, 195, 200);
+    --cve: rgb(183, 220, 212);
     /* more... */
     --active: rgb(167, 195, 200);
 }

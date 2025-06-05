@@ -2,7 +2,7 @@ baseURL: https://example.org/
 languageCode: zn-ch
 title: Hotaru's Blog
 pagination:
-  pagerSize: 5
+  pagerSize: 10
 theme: ["PaperMod"]
 
 enableInlineShortcodes: true

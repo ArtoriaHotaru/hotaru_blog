@@ -1206,7 +1206,7 @@ header.css:
 extend_footer.html添加：
 
 ```html
-{{- $highlight := resources.Get "js/pangu.min.js" }}$
+{{- $highlight := resources.Get "js/pangu.min.js" }}
 <script>
   (function (u, c) {
     var d = document,
@@ -1271,10 +1271,14 @@ params:
 
 ## collapse shortcode
 
-```markdown
-{{< collapse summary="xxx" >}}
+> [!caution]
+>
+> 需要分别在两个标签前后加`{{}}`，由于hugo错误地将codeblock中的短代码也解析了，所以这里把前后的花括号省略了。
+
+```html
+< collapse summary="xxx" >
 ...
-{{< /collapse >}}
+< /collapse >
 ```
 
 ## 默认收起代码块
