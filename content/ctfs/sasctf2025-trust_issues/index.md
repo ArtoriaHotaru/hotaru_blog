@@ -698,7 +698,23 @@ E/LD:  region  9: va 0x00201000 pa 0x7fc42010 size 0x001000 flags rw-- (param)
 
 ### gadget查找
 
-二是gadget怎么找。一开始用ROPgadget，遇到了capstone版本太新导致的符号缺失问题（要么回退capstone版本，要么在ROPgadget源码中全局替换缺失的符号），但是无论是直接用`ROPgadget --binary`还是设置`--rawMode arm/32/thumb --rawArch arm --rawEndian "little"`都不好使（至今不知道怎么设置参数才对），最终直接在IDA汇编窗口全局搜`POP`字符串找到的gadget……
+二是用ROPgadget的时候遇到了符号缺失报错。具体参考[Issue 208# Replace CS_ARCH_ARM64 with CS_ARCH_AARCH64](https://github.com/JonathanSalwan/ROPgadget/pull/208)，由于最新的capstone 6.0 alpha版本将几个宏定义名称进行了修改，所以如果更新pwntools时连带将capstone更新到了6.0以上的非stable版本，就会导致ROPgadget在查找arm/aarch64架构指令时报错`NameError: name 'CS_ARCH_ARM64' is not defined`。
+
+解决方法最简单的就是capstone降版本为5.0.3或5.0.6：
+
+```bash
+python3 -m pip install --upgrade capstone==5.0.3
+```
+
+> capstone 5.0的最新版本是5.0.6，但是由于还安装了angr，最高依赖capstone 5.0.3，所以这里多降了一个版本。
+>
+> ```bash
+> ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+> angr 9.2.159 requires capstone==5.0.3, but you have capstone 5.0.6 which is incompatible.
+> Successfully installed ROPgadget-7.6 capstone-5.0.6
+> ```
+
+要是不想降级capstone，还可以**直接在IDA汇编窗口全局搜`POP`字符串找gadget**……
 
 ### ROP中的函数调用
 
@@ -719,19 +735,15 @@ E/LD:  region  9: va 0x00201000 pa 0x7fc42010 size 0x001000 flags rw-- (param)
 
 所以这里我们就不能从函数开头开始执行，否则返回地址就不是我们ROP中的返回地址，而是`LR`寄存器中的返回地址了，需要从`SUB SP, SP, *`开始。
 
-此外，保存的返回地址需要+1才能正常执行，原因问了一下deepseek：
+此外，保存的返回地址需要+1才能正常执行，原因是 ARM 处理器支持两种指令集模式：
 
-ARM 处理器支持两种指令集模式：
+<img src="./images/image-20250608094034195.png" alt="image-20250608094034195" style="zoom:50%;" />
 
-* **ARM 模式**：每条指令占 4 字节（32 位）。
-* **Thumb 模式**：每条指令占 2 字节（16 位）。
+**CPU工作在哪种模式由CPSR程序状态寄存器决定**：
 
-在 ARM 程序中，返回地址是一个指向函数调用返回点的地址。由于 ARM 和 Thumb 模式指令长度不同，ARM 需要通过某种方式来正确处理返回地址，在实际操作中，由于 `LR`（链接寄存器）存储的是 **下一个指令地址**：
+<img src="./images/image-20250608094215561.png" alt="image-20250608094215561" style="zoom: 50%;" />
 
-* 在 **ARM 模式**，跳转到目标地址时，`LR` 存储的返回地址是 **当前地址 + 4**。
-* 在 **Thumb 模式**，由于每个 Thumb 指令占 2 字节，`LR` 中的返回地址是 **当前地址 + 2**。
-
-因此，在 `LR` 中存储的地址本身是指向下一个指令的地址，**当程序切换到 Thumb 模式时，需要将返回地址加 1，以便正确指向 16 位指令的实际位置**。
+由于 ARM 和 Thumb 模式指令长度不同，需要通过某种方式来正确处理返回地址。无论是ARM还是Thumb，指令地址都是2字节对齐的，地址的最低位就可以被复用为工作状态判断标志（用以设置CPSR的T位），因此当ARM下调用`BX/BLX`指令或在Thumb下调用`POP {...,pc}`指令进行跳转时，**如果目标地址运行在 Thumb 模式，都需要将返回地址加 1**。
 
 # Exp
 
