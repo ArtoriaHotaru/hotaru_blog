@@ -5,11 +5,11 @@ date: "2025-06-23"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-series: ["pwn", "qemu", "cve", "realword"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+series: ["pwn", "qemu", "cve", "realworld"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realworld, reverse, cve
 highlights: "CVE-2023-3018 virtio-crypto heap overflow"
 source: "ACTF2023" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
-tags: ["ctf", "pwn", "qemu", "CVE", "realword", "virtio", "virtqueue(vring)"]
+tags: ["ctf", "pwn", "qemu", "CVE", "realworld", "virtio", "virtqueue(vring)"]
 attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false

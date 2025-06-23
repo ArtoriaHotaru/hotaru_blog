@@ -5,11 +5,11 @@ date: "2025-05-11"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-series: ["pwn", "qemu", "realword"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+series: ["pwn", "qemu", "realworld"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realworld, reverse, cve
 highlights: "Qemu TCG, CPUTLB, mmap in qemu"
 source: "DiceCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
-tags: ["ctf", "pwn", "qemu", "realword", "TCG", "CPUTLB", "CPUTLBEntry", "mmap"]
+tags: ["ctf", "pwn", "qemu", "realworld", "TCG", "CPUTLB", "CPUTLBEntry", "mmap"]
 attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
