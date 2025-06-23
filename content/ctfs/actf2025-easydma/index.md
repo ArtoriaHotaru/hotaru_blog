@@ -1,5 +1,5 @@
 ---
-title: "Easydma"
+title: "EasyDMA (CVE-2024-8612 virtio-blk DMA Reentrancy)"
 description: "ACTF2025"
 date: "2025-05-21"
 # weight: 1
