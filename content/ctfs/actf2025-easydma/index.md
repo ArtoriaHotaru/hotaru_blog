@@ -9,7 +9,7 @@ series: ["pwn", "qemu", "cve", "realworld"] # pwn, stack, heap, shellcode, cpp, 
 highlights: "Qemu virtio-blk device, DMA可重入漏洞（DMA Reentrancy）, CVE-2024-8612, virtqueue(vring)"
 source: "ACTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
-tags: ["ctf", "pwn", "qemu", "CVE", "realword", "virtio", "DMA Reentrancy", "virtqueue(vring)"]
+tags: ["ctf", "pwn", "qemu", "CVE", "realworld", "virtio", "DMA Reentrancy", "virtqueue(vring)"]
 attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
