@@ -28,7 +28,7 @@ cover:
 # 环境搭建
 
 * 宿主机/虚拟机OS：Ubuntu18.04（kernel 4.15.0-213-generic）
-* vmware安装包：[VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle](https://customerconnect.vmware.com/en/downloads/details?downloadGroup=WKST-1502-LX&productId=799&rPId=55768)
+* vmware安装包：[VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle](https://archive.org/download/vmwareworkstationfull15.0.210952284.x8664/VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle)
 
 # 题目分析
 
