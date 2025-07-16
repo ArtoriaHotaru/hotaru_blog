@@ -189,7 +189,7 @@ void channel_recv_finish21(int cookie1,int cookie2,int channel_num,int *res){
 
 首先我们要泄露程序基址，使用其他命令的结构体占用UAF的chunk，从而泄露出指针。
 
-这里我们借用`vmx.capability.dnd_version`这条命令，由字符串可以搜到处理函数为`sub_10F3E0`，跟进`sub_163E80`，根据调试来看`sub_163E80`中的三个分支应该都会进入，且每个分支中都会在堆块存储vtable地址。以第一个分支为例，申请0xf0大小的内存（0x100 chunk），并在堆块起始位置存放了vtable的地址：
+这里我们借用`vmx.capability.dnd_version`这条命令，由字符串可以搜到处理函数为`sub_10F3E0`，跟进`sub_163E80`，根据调试来看`sub_163E80`中的三个分支在第一次执行时都会进入（类似于初始化，所以重复运行exp就无法再次泄露了），且每个分支中都会在堆块存储vtable地址。以第一个分支为例，申请0xf0大小的内存（0x100 chunk），并在堆块起始位置存放了vtable的地址：
 
 ![image-20250715093215681](images/image-20250715093215681.png)
 
