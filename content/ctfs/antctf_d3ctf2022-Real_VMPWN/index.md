@@ -48,8 +48,11 @@ After exploiting the vulnerability to execute "/gflag" on the host, the "/flag" 
 ```
 
 * 宿主机/虚拟机OS：Ubuntu18.04（kernel 4.15.0-213-generic）
+
 * vmware安装包：[VMware-Workstation-Full-16.1.0-17198959.x86_64.bundle](https://github.com/201853910/VMwareWorkstation/releases/download/16.0/VMware-workstation-full-16.1.0-17198959.x86_64.bundle)
-  注册码：UV3TU-4AGD0-080WP-PPPNC-WARUA
+  
+  （注册码：UV3TU-4AGD0-080WP-PPPNC-WARUA）
+  
 * 赛题源码：https://drive.google.com/file/d/1Ntk-vB5nzJ0S3qCPT-EOxL_ZiP2g3ChG/view
 
 搭建复现环境时，安装完bundle之后需要暂停`vmware.service`再替换`vmnet-dhcpd`，题目中还给了libc和ld，也一起替换了：
