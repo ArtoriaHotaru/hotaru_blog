@@ -46,6 +46,7 @@
 .small-tags {
     --pwn: rgba(167, 195, 200, 0.6);
     --heap: rgb(223, 241, 241);
+    --IO_FILE: rgb(223, 241, 241);
     --shellcode: rgb(248, 228, 211);
     --syscall: rgba(18, 140, 126, 0.5);
     --cpp: rgb(210, 219, 229);

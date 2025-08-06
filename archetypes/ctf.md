@@ -5,11 +5,12 @@ date: "2025-00-00"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-series: ["pwn"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "ATF (Arm Trust Firmware), tee, smc"
+series: ["pwn"]
+## series candidates: pwn, stack, heap, IO_FILE, shellcode, cpp, go, zig, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+highlights: "xxx"
 source: "xxxCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
-tags: ["ctf", "pwn", "atf", "tee", "smc", "aarch64"]
+tags: ["ctf", "pwn"]
 attachmentURL: "attachment.zip"
 draft: false
 hidemeta: false
