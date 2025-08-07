@@ -7,7 +7,7 @@ date: "2025-08-06"
 categories: ["ctf"] # ctf, daily
 series: ["pwn", "IO_FILE"]
 ## series candidates: pwn, stack, heap, IO_FILE, shellcode, cpp, go, zig, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "_IO_wfile_seekoff一种新的IO_FILE利用方法，伪造fp->_codecvt->__cd_in.step结构劫持控制流"
+highlights: "glibc2.41 IO_FILE的新利用方法，rewind函数调用_IO_SEEKOFF(_IO_wfile_seekoff)，在不修改vtable、_wide_data和_wide_vtable的情况下实现泄露，通过伪造__codecvt->__cd_in.step结构劫持控制流"
 source: "JUSTCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "IO_FILE", "rewind", "_IO_wfile_seekoff"]
@@ -198,6 +198,8 @@ pwndbg>
 13:004c│  0xf31b2958 —▸ 0xf3003a30 (_IO_default_showmanyc) ◂— endbr32 
 14:0050│  0xf31b295c —▸ 0xf3003a40 (_IO_default_imbue) ◂— endbr32
 ```
+
+rewind函数调用[_IO_rewind](https://elixir.bootlin.com/glibc/glibc-2.41/C/ident/_IO_rewind) -> [_IO_seekoff_unlocked](https://elixir.bootlin.com/glibc/glibc-2.41/C/ident/_IO_seekoff_unlocked) -> [_IO_SEEKOFF](https://elixir.bootlin.com/glibc/glibc-2.41/C/ident/_IO_SEEKOFF)([_IO_wfile_seekoff](https://elixir.bootlin.com/glibc/glibc-2.41/C/ident/_IO_wfile_seekoff))。
 
 # 解题思路
 
