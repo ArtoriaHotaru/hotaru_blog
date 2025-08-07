@@ -205,7 +205,7 @@ rewind函数调用[_IO_rewind](https://elixir.bootlin.com/glibc/glibc-2.41/C/ide
 
 ## leak
 
-观察rewind的调用流程，参考House of Cat的利用方法，重点看了一下_IO_switch_to_wget_mode，发现有一条路径可以实现泄露：
+观察rewind的调用流程，参考House of Cat的利用方法，重点看了一下`_IO_switch_to_wget_mode`，发现有一条路径可以实现泄露：
 
 [`_IO_wfile_seekoff`](https://elixir.bootlin.com/glibc/glibc-2.41/source/libio/wfileops.c#L743)
   -> [`_IO_switch_to_wget_mode`](https://elixir.bootlin.com/glibc/glibc-2.41/source/libio/wfileops.c#L773)
