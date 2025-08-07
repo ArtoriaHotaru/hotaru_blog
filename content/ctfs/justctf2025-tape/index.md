@@ -134,6 +134,71 @@ int init_1961()
 
 这道题的难点在于毙掉了传统的直接改`_vtable`、`_wide_data->_wide_vtable`、`_wide_data`的方式进行函数调用，只能回过头去看rewind源码里面有什么能利用的地方。
 
+/tmp/tape的FILE结构如下（先rewind一次可以把几个堆指针初始化）：
+
+```gdb
+pwndbg> p *(struct _IO_FILE_plus *)0x64fe51a0
+$1 = {
+  file = {
+    _flags = -72539000,
+    _IO_read_ptr = 0x64fe53f0 "",
+    _IO_read_end = 0x64fe53f0 "",
+    _IO_read_base = 0x64fe53f0 "",
+    _IO_write_base = 0x64fe53f0 "",
+    _IO_write_ptr = 0x64fe53f0 "",
+    _IO_write_end = 0x64fe53f0 "",
+    _IO_buf_base = 0x64fe53f0 "",
+    _IO_buf_end = 0x64fe63f0 "",
+    _IO_save_base = 0x0,
+    _IO_backup_base = 0x0,
+    _IO_save_end = 0x0,
+    _markers = 0x0,
+    _chain = 0xf31b35c0 <_IO_2_1_stdin_>,
+    _fileno = 3,
+    _flags2 = 1,
+    _short_backupbuf = "",
+    _old_offset = 0,
+    _cur_column = 0,
+    _vtable_offset = 0 '\000',
+    _shortbuf = "",
+    _lock = 0x64fe5238,
+    _offset = 0,
+    _codecvt = 0x64fe5280,
+    _wide_data = 0x64fe5244,
+    _freeres_list = 0x0,
+    _freeres_buf = 0x0,
+    _prevchain = 0xf31b3c80 <_IO_list_all>,
+    _mode = 1,
+    _unused2 = '\000' <repeats 39 times>
+  },
+  vtable = 0xf31b290c
+}
+pwndbg> tele 0xf31b290c
+00:0000│  0xf31b290c ◂— 0
+01:0004│  0xf31b2910 ◂— 0
+02:0008│  0xf31b2914 —▸ 0xf2fff0e0 (_IO_file_finish) ◂— endbr32 
+03:000c│  0xf31b2918 —▸ 0xf2ff96a0 (_IO_wfile_overflow) ◂— endbr32 
+04:0010│  0xf31b291c —▸ 0xf2ff9650 (_IO_wfile_underflow_maybe_mmap) ◂— endbr32 
+05:0014│  0xf31b2920 —▸ 0xf2ff7850 (_IO_wdefault_uflow) ◂— endbr32 
+06:0018│  0xf31b2924 —▸ 0xf2ff7630 (_IO_wdefault_pbackfail) ◂— endbr32 
+07:001c│  0xf31b2928 —▸ 0xf2ffa430 (_IO_wfile_xsputn) ◂— endbr32 
+pwndbg> 
+08:0020│  0xf31b292c —▸ 0xf3000db0 (__GI__IO_file_xsgetn) ◂— endbr32 
+09:0024│  0xf31b2930 —▸ 0xf2ff9aa0 (_IO_wfile_seekoff) ◂— endbr32 
+0a:0028│  0xf31b2934 —▸ 0xf3002610 (_IO_default_seekpos) ◂— endbr32 
+0b:002c│  0xf31b2938 —▸ 0xf2fff950 (_IO_file_setbuf_mmap) ◂— endbr32 
+0c:0030│  0xf31b293c —▸ 0xf2ff9910 (_IO_wfile_sync) ◂— endbr32 
+0d:0034│  0xf31b2940 —▸ 0xf2ff33d0 (_IO_wfile_doallocate) ◂— endbr32 
+0e:0038│  0xf31b2944 —▸ 0xf3000a40 (_IO_file_read) ◂— endbr32 
+0f:003c│  0xf31b2948 —▸ 0xf3000b30 (_IO_file_write) ◂— endbr32 
+pwndbg> 
+10:0040│  0xf31b294c —▸ 0xf3000a80 (_IO_file_seek) ◂— endbr32 
+11:0044│  0xf31b2950 —▸ 0xf3000b10 (_IO_file_close) ◂— endbr32 
+12:0048│  0xf31b2954 —▸ 0xf3000ab0 (_IO_file_stat) ◂— endbr32 
+13:004c│  0xf31b2958 —▸ 0xf3003a30 (_IO_default_showmanyc) ◂— endbr32 
+14:0050│  0xf31b295c —▸ 0xf3003a40 (_IO_default_imbue) ◂— endbr32
+```
+
 # 解题思路
 
 ## leak
