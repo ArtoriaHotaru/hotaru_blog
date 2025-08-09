@@ -46,7 +46,7 @@
 .small-tags {
     --pwn: rgba(167, 195, 200, 0.6);
     --heap: rgb(223, 241, 241);
-    --IO_FILE: rgb(223, 241, 241);
+    --IO_FILE: rgb(192, 241, 241);
     --shellcode: rgb(248, 228, 211);
     --syscall: rgba(18, 140, 126, 0.5);
     --cpp: rgb(210, 219, 229);
@@ -55,6 +55,7 @@
     --sandbox: rgb(204, 235, 214);
     --qemu: rgb(246, 235, 188);
     --vmware: rgb(165, 222, 229);
+    --virtualbox: rgb(170, 150, 165, 0.7);
     --kernel: rgb(189, 213, 214);
     --windows: rgb(250, 219, 223);
     --aarch64: rgb(233, 247, 182);
