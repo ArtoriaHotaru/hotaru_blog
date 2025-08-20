@@ -41,7 +41,7 @@
         <th scope="col">ID</th>
         <th scope="col">Product</th>
         <th scope="col">Type</th>
-        <th scope="col">Description</th>
+        <th style="border-right: 0;" scope="col">Description</th>
         </tr>
     </thead>
     <tbody>
@@ -61,7 +61,7 @@
             {{- end }}
           </ul>
         </td>
-        <td style="width: 300px;"> {{ .Params.Description }} </td>
+        <td style="width: 300px; border-right: 0;"> {{ .Params.Description }} </td>
       </tr>
       {{- end }}
   </tbody>
