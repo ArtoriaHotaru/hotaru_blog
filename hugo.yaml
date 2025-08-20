@@ -28,16 +28,19 @@ menu:
     - name: Archive
       url: /archives/ # all contents sorted by time
       weight: 3
-    - name: CTFs
-      url: /ctfs/
+    - name: CTF
+      url: /ctf/
       weight: 4
+    - name: CVE
+      url: /cve/
+      weight: 5
     - name: Daily
       url: /daily/
-      weight: 5
+      weight: 6
 
 taxonomies:
-  series: series # pwn, reverse, realword, cve, os, arch (for ctf) / cve, study, tips (for daily)
-  category: categories # ctf, daily
+  series: series
+  category: categories # ctf, cve, daily
   tag: tags
 ## Page params:
   # source: source # xxxctf2025, adword, buuctf, ...  (for ctf)
@@ -65,8 +68,10 @@ params:
     buttons:
       - name: Archives
         url: archives
-      - name: CTFs
-        url: ctfs
+      - name: CTF
+        url: ctf
+      - name: CVE
+        url: cve
       - name: Daily
         url: daily
 
@@ -79,7 +84,8 @@ params:
       url: "<link3>"
 
   mainSections: # Posts from only one folder/section visible on home page
-    - ctfs
+    - ctf
+    - cve
     - daily
 
   ShowReadingTime: true

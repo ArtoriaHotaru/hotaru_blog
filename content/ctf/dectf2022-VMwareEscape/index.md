@@ -6,7 +6,7 @@ date: "2025-07-17"
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
 series: ["pwn", "vmware"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "VMware Escape. Can be used as an entry-level GusetRPC(backdoor) challenge for learning~"
+highlights: "VMware Escape, GusetRPC(backdoor)"
 source: "DECTF2022" # xxxctf2025, adword, buuctf, ...
 difficulty: "easy" # high, medium, easy
 tags: ["ctf", "pwn", "vmware", "GuestRPC", "backdoor"]

@@ -5,8 +5,8 @@ date: "2025-05-21"
 # weight: 1
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
-series: ["pwn", "qemu", "cve", "realworld"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "Qemu virtio-blk device, DMA可重入漏洞（DMA Reentrancy）, CVE-2024-8612, virtqueue(vring)"
+series: ["pwn", "qemu", "realworld", "cve"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+highlights: "Qemu Escape, virtio-blk DMA Reentrancy, CVE-2024-8612"
 source: "ACTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "qemu", "CVE", "realworld", "virtio", "DMA Reentrancy", "virtqueue(vring)"]

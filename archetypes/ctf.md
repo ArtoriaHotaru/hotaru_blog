@@ -6,7 +6,7 @@ date: "2025-00-00"
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
 series: ["pwn"]
-## series candidates: pwn, stack, heap, IO_FILE, shellcode, cpp, go, zig, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
+## series candidates: pwn, stack, heap, IO_FILE, shellcode, cpp, go, zig, sandbox, qemu, vmware, virtualbox, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
 highlights: "xxx"
 source: "xxxCTF2025" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy

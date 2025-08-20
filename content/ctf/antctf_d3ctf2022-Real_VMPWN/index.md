@@ -6,7 +6,7 @@ date: "2025-07-25"
 # aliases: ["/first"]
 categories: ["ctf"] # ctf, daily
 series: ["pwn", "vmware", "realworld", "cve"] # pwn, stack, heap, shellcode, cpp, go, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "Vmware Escape, vmnet-dhcpd, CVE-2020-3947"
+highlights: "VMware Escape, vmnet-dhcpd, CVE-2020-3947"
 source: "AntCTF×D3CTF2022" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "vmware", "realworld", "cve", "vmnet-dhcpd"]

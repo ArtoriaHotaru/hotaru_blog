@@ -7,7 +7,7 @@ date: "2025-08-09"
 categories: ["ctf"] # ctf, daily
 series: ["pwn", "virtualbox", "realworld"]
 ## series candidates: pwn, stack, heap, IO_FILE, shellcode, cpp, go, zig, sandbox, qemu, kernel, windows, arm, aarch64, mips, ppc, realword, reverse, cve
-highlights: "VirtualBox escape, USB3.0(xHCI) mmio"
+highlights: "VirtualBox Escape, USB3.0(xHCI) mmio"
 source: "QWB2024" # xxxctf2025, adword, buuctf, ...
 difficulty: "high" # high, medium, easy
 tags: ["ctf", "pwn", "virtualbox", "realworld", "usb3.0", "xHCI"]
