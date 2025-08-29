@@ -4,7 +4,7 @@ description: "xxx"
 date: "2025-00-00"
 categories: ["cve"]
 series: ["escape"]
-## series candidates: leakage, privilege escalation, rce, escape, ...
+## series candidates: information-disclosure, privilege-escalation, rce, escape, ...
 product: "virtualbox"
 tags: ["cve", "virtualbox"]
 attachmentURL: "attachment.zip"
