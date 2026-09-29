@@ -1,5 +1,6 @@
 .main {
-    font-family:'LXGW WenKai';
+    font-family: "XiangcuiZeroHei-2.0";
+    font-weight: normal;
     position: relative;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     max-width: calc(var(--main-width) + var(--gap) * 2);

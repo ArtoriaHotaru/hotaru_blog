@@ -5,6 +5,8 @@
 }
 
 .toc {
+    font-family: "TsangerYuMo W03";
+    font-weight: normal;
     margin: 0 2px 40px 2px;
     border: 1px solid var(--border);
     background: var(--entry);

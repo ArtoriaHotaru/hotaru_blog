@@ -33,10 +33,12 @@
 }
 
 .post-content {
+    font-family: "TsangerYuMo W03";
+    font-weight: normal;
     color: var(--content);
 }
 
-.post-header h1,
+/* .post-header h1,
 .post-description,
 .post-content h1,
 .post-content h2,
@@ -44,7 +46,12 @@
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    font-family:'Xiaolai SC';
+    font-family:'xiangcuizerohei-2.0';
+} */
+
+.post-description {
+    font-family: "TsangerYuMo W03";
+    font-weight: normal;
 }
 
 .post-content h1 {
